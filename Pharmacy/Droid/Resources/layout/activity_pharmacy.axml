@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+        <TextView
+            android:id="@+id/pharmacy_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pharmacy_title"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/pharmacy_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pharmacy_subtitle"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="fill_parent"
+            android:layout_height="120dp" />
+        <TextView
+            android:id="@+id/pharmacy_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pharmacy_subtitle"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/pharmacy_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pharmacy_subtitle"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/pharmacy_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pharmacy_subtitle"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pharmacy_searchproducts"
+            android:layout_marginTop="20dp"
+            android:background="@color/green_button" />
+    </LinearLayout>
+</RelativeLayout>

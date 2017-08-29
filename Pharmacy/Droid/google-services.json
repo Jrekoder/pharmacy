@@ -1,0 +1,42 @@
+﻿{
+    "project_info": {
+        "project_number": "1066114522267",
+        "firebase_url": "https://pharmacy-2a4c3.firebaseio.com",
+        "project_id": "pharmacy-2a4c3",
+        "storage_bucket": "pharmacy-2a4c3.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1066114522267:android:084f1e0e366eedc0",
+                "android_client_info": {
+                    "package_name": "com.rcervantes.pharmacy"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1066114522267-ai527o9i85etbcc95i32katd52dfh4ur.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyB7FXEu1v0I5T7rjRLSgRjmzlkhHMDX4WI"
+                }
+            ],
+            "services": {
+                "analytics_service": {
+                    "status": 1
+                },
+                "appinvite_service": {
+                    "status": 1,
+                    "other_platform_oauth_client": []
+                },
+                "ads_service": {
+                    "status": 2
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

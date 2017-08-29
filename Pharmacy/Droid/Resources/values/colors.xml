@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+	
+    <color name="green_line">#277f45</color>
+	<color name="green_button">#A2CD48</color>
+	<color name="green_pagertabstrip">#CFE4A7</color>
+
+	<color name="black">#000000</color>
+	<color name="yellow">#FFFF00</color>
+    <color name="blue">#2F77F4</color>
+    <color name="gray_normal_text">#9a9a9a</color>
+    <color name="white">#FFFFFF</color>
+    <color name="whiteTransparent">#00FFFFFF</color>
+    <color name="green_listViewCacheColorHint">#ffdaff7f</color>
+    <color name="product_name">#02703C</color>
+    <color name="product_detail">#02703C</color>
+    <color name="product_price">#A2CD48</color>
+    <color name="pharmacy_title">#02703C</color>
+    <color name="pharmacy_subtitle">#02703C</color>
+
+	<color name="toolbar_background">#02703C</color>
+</resources>
