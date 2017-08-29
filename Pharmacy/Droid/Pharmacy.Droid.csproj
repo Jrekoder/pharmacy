@@ -145,7 +145,6 @@
     <Compile Include="Services\PushHandlerService.cs" />
     <Compile Include="Activities\fragment_assistant.cs" />
     <Compile Include="Activities\fragment_mycard.cs" />
-    <Compile Include="Keys.cs" />
     <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
