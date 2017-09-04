@@ -29,7 +29,7 @@
                 android:gravity="center"
                 android:text="@string/footer_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/gray_normal_text"
+                android:textColor="@color/white"
                 android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
@@ -117,7 +117,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginStart="16dp"
-                android:background="@color/green_button"
+                android:background="@color/elite_orange"
                 android:text="@string/login_button_title"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/white"

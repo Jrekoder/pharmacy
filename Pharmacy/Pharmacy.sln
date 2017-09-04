@@ -1,13 +1,13 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy", "Pharmacy\Pharmacy.csproj", "{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.iOS", "iOS\Pharmacy.iOS.csproj", "{D431AB17-9040-47D9-9978-AFB742E50CEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Droid.UITests", "Pharmacy.Droid.UITests\Pharmacy.Droid.UITests.csproj", "{04B97310-8697-4545-AA75-E36C7B446E96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Droid", "Droid\Pharmacy.Droid.csproj", "{6BA93474-54F9-4640-B84C-6078D6D478D0}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Pharmacy.Domain", "Pharmacy.Domain\Pharmacy.Domain.shproj", "{F17724E4-DA0F-45D5-A98B-D29318658CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +19,6 @@ Global
 		Debug|iPhone = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Release|iPhone.Build.0 = Release|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{D431AB17-9040-47D9-9978-AFB742E50CEF}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{D431AB17-9040-47D9-9978-AFB742E50CEF}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{D431AB17-9040-47D9-9978-AFB742E50CEF}.Release|Any CPU.ActiveCfg = Release|iPhone

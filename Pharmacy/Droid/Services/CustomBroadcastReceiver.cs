@@ -22,6 +22,6 @@ namespace Pharmacy.Droid
 	public class CustomBroadcastReceiver : GcmBroadcastReceiverBase<PushHandlerService>
 	{
 		// Set the Google app ID.
-		public static string [] senderIDs = new string [] { "1066114522267" };
+		public static string [] senderIDs = new string [] { Constants.FirebaseAppSenderID };
 	}
 }

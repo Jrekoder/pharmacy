@@ -1,14 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:padding="5dp"
-        android:src="@mipmap/store"
-        android:layout_alignParentRight="true" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -18,14 +12,14 @@
             android:id="@+id/pharmacy_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/pharmacy_title"
+            android:textColor="@color/primary_light"
             android:textSize="16dp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/pharmacy_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/pharmacy_subtitle"
+            android:textColor="@color/primary_light"
             android:textSize="12dp"
             android:textStyle="normal" />
     </LinearLayout>

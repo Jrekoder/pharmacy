@@ -14,7 +14,7 @@ using Microsoft.WindowsAzure.MobileServices;
 namespace Pharmacy.Droid
 {
     [Activity(Label = "@string/app_name",
-              MainLauncher = true, Icon = "@mipmap/icon", Theme = "@android:style/Theme.DeviceDefault",
+              MainLauncher = true, Icon = "@mipmap/icon",
               LaunchMode = Android.Content.PM.LaunchMode.SingleTop, NoHistory = true,
               ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class activity_login : Activity

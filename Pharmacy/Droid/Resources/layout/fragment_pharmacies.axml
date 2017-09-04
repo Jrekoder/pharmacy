@@ -8,10 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
-        sothree:umanoPanelHeight="130dp"
+        sothree:umanoPanelHeight="110dp"
         sothree:umanoShadowHeight="4dp"
         sothree:umanoDragView="@+id/dragView"
-        sothree:umanoOverlay="true">
+        sothree:umanoOverlay="false">
     <!-- MAIN CONTENT -->
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,8 +20,7 @@
             <ListView
                 android:id="@+id/list_pharmacies"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:cacheColorHint="@color/green_listViewCacheColorHint" />
+                android:layout_height="fill_parent" />
         </RelativeLayout>
     <!-- SLIDING LAYOUT -->
         <LinearLayout

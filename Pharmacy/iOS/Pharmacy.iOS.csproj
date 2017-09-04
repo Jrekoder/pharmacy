@@ -87,12 +87,6 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pharmacy\Pharmacy.csproj">
-      <Project>{58FEC7FB-F4B3-46E9-BFEF-17CDA31722AB}</Project>
-      <Name>Pharmacy</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>

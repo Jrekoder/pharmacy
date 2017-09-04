@@ -8,11 +8,13 @@ using Android.Widget;
 using Newtonsoft.Json;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
+using Microsoft.Azure.Mobile.Analytics;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Pharmacy.Droid
 {
     [Activity(Label = "@string/pharmacy_title",
-              Icon = "@mipmap/icon", Theme = "@style/Theme.AppCompat.Custom",
+              Icon = "@mipmap/icon",
 			  LaunchMode = Android.Content.PM.LaunchMode.SingleTop, ParentActivity = typeof(activity_main),
 			  ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class activity_pharmacy : AppCompatActivity
@@ -27,6 +29,11 @@ namespace Pharmacy.Droid
 
             // Create your application here
             SetContentView(Resource.Layout.activity_pharmacy);
+
+            var toolbar = FindViewById<Toolbar> (Resource.Id.main_toolbar);
+            //Toolbar will now take on default Action Bar characteristics
+            SetSupportActionBar (toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 
             string pharmacy_received = Intent.GetStringExtra("pharmacy");
             pharmacy = JsonConvert.DeserializeObject<Pharmacy>(pharmacy_received);
@@ -51,6 +58,13 @@ namespace Pharmacy.Droid
 
 
         }
+
+        protected override void OnStart ()
+        {
+            base.OnStart ();
+            Analytics.TrackEvent ("View: Pharmacy Detail");
+        }
+
         private class CustomMapReady : Java.Lang.Object, IOnMapReadyCallback
         {
             private activity_pharmacy pharmacies = null;

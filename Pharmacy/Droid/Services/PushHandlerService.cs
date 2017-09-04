@@ -1,6 +1,7 @@
 using System;
 using Android.App;
 using Android.Content;
+using Android.Widget;
 using Gcm.Client;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json.Linq;
@@ -23,7 +24,7 @@ namespace Pharmacy.Droid
 			if (intent.Extras.ContainsKey ("message"))
 			{
 				message = intent.Extras.Get ("message").ToString ();
-				var title = "Bot Response";
+				var title = "Assistant Response";
 
 				// Create a notification manager to send the notification.
 				var notificationManager =
@@ -45,6 +46,8 @@ namespace Pharmacy.Droid
 
 				// Display the notification in the Notifications Area.
 				notificationManager.Notify (1, notification);
+
+                // Display Alert Dialog
                 this.DialogNotify (title, message);
 			}
         }
@@ -53,10 +56,10 @@ namespace Pharmacy.Droid
 		{
 			activity_main.CurrentActivity.RunOnUiThread (() =>
 			{
-				AlertDialog.Builder dlg = new AlertDialog.Builder (activity_main.CurrentActivity);
+				AlertDialog.Builder dlg = new AlertDialog.Builder (activity_main.CurrentActivity, Resource.Style.MyAlertDialogStyle);
 				AlertDialog alert = dlg.Create ();
 				alert.SetTitle (title);
-				alert.SetButton ("OK", delegate
+				alert.SetButton ("Accept", delegate
 				{
 					alert.Dismiss ();
 				});

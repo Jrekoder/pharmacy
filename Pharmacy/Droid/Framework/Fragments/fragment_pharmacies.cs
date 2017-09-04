@@ -11,23 +11,24 @@ using Newtonsoft.Json;
 
 namespace Pharmacy.Droid
 {
-    public class fragment_pharmacies : Android.Support.V4.App.Fragment
+    public class fragment_pharmacies : Android.Support.V4.App.Fragment, ITabFragment
 	{
+        #region ITabFragment Members
+
+        public string Title => "Pharmacies";
+        public int Icon => Resource.Drawable.ic_tabbar_resources;
+
+        #endregion
+
         private activity_main mActivity = null;
 		private MapView mMapView = null;
         private PharmacyListAdapter mAdapter = null;
         private List<Pharmacy> mPharmacies = null;
 
-		public fragment_pharmacies(activity_main act) {
+        public fragment_pharmacies(activity_main act) {
             this.mActivity = act;
             this.mPharmacies = Pharmacy.LoadPharmacies();
         }
-
-		public static fragment_pharmacies NewInstance(activity_main act)
-		{
-			fragment_pharmacies fragment = new fragment_pharmacies(act);
-			return fragment;
-		}
 
 		public override void OnResume()
 		{
@@ -55,7 +56,7 @@ namespace Pharmacy.Droid
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			View rootView = inflater.Inflate(Resource.Layout.fragment_section_pharmacies, container, false);
+			View rootView = inflater.Inflate(Resource.Layout.fragment_pharmacies, container, false);
 			mMapView = (MapView)rootView.FindViewById(Resource.Id.mapView);
 			mMapView.OnCreate(savedInstanceState);
 			mMapView.OnResume();
@@ -169,8 +170,11 @@ namespace Pharmacy.Droid
 				}
 				convertView.Id = position;
 
-				((TextView)convertView.FindViewById(Resource.Id.pharmacy_title)).Text = pharmacies[position].NombreComercial;
-                ((TextView)convertView.FindViewById(Resource.Id.pharmacy_subtitle)).Text = pharmacies[position].NombreSucursal;
+                if (pharmacies[position] != null)
+                {
+                    ((TextView) convertView.FindViewById (Resource.Id.pharmacy_title)).Text = pharmacies [position].NombreComercial;
+                    ((TextView) convertView.FindViewById (Resource.Id.pharmacy_subtitle)).Text = pharmacies [position].NombreSucursal;
+                }
 
 				return convertView;
 			}

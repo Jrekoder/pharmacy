@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Pharmacy App</string>
+	<string name="app_name">Pharmacy</string>
     <string name="footer_title">Powered by Xamarin Android</string>
 	<string name="login_title">Azure Mobile App Service</string>
-	<string name="login_subtitle">Authentication (AD)</string>
-	<string name="login_username">username</string>
-	<string name="login_password">password</string>
-	<string name="login_button_title">Login</string>
+	<string name="login_subtitle">Azure Active Directory</string>
+	<string name="login_button_title">Authenticate</string>
 	<string name="products_title">Search</string>
 	<string name="mycard_title">My Card</string>
 	<string name="pharmacy_title">Pharmacy</string>
