@@ -29,7 +29,7 @@ namespace Pharmacy.Droid.UITests
         }
 
         [Test]
-        public void Login()
+        public void SelectPharmacy()
         {
             //app.Repl ();
             app.Screenshot ("Tap Login");
@@ -38,6 +38,10 @@ namespace Pharmacy.Droid.UITests
             app.ScrollDown (x => x.Id ("sliding_layout"), ScrollStrategy.Gesture, 0.67, 200);
             app.Screenshot ("Tap Pharmacy");
             app.Tap (x => x.Class ("AppCompatTextView").Text ("GRUPO DIAZ BARRIGA"));
+            app.Screenshot ("Go Back To The List");
+            app.Back ();
+            app.Screenshot ("Go Back And Close The App");
+            app.Back ();
         }
 
     }
