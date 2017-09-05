@@ -156,7 +156,6 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Activities\fragment_products.cs" />
     <Compile Include="Models\Pharmacy.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Services\CustomBroadcastReceiver.cs" />
@@ -192,11 +191,12 @@
     <Compile Include="Content\ContentRecyclerAdapter.cs" />
     <Compile Include="Content\ContentRecyclerFragment.cs" />
     <Compile Include="Content\ContentViewHolder.cs" />
-    <Compile Include="Framework\Fragments\activity_login.cs" />
-    <Compile Include="Framework\Fragments\activity_main.cs" />
     <Compile Include="Framework\Fragments\fragment_pharmacies.cs" />
     <Compile Include="Framework\Fragments\fragment_assistant.cs" />
     <Compile Include="Framework\Activity\activity_pharmacy.cs" />
+    <Compile Include="Framework\Activity\activity_login.cs" />
+    <Compile Include="Framework\Activity\activity_main.cs" />
+    <Compile Include="Framework\Activity\activity_products.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -223,7 +223,7 @@
     <AndroidResource Include="Resources\layout\fragment_assistant.axml" />
     <AndroidResource Include="Resources\layout\fragment_section_mycard.axml" />
     <AndroidResource Include="Resources\layout\fragment_pharmacies.axml" />
-    <AndroidResource Include="Resources\layout\fragment_section_products.axml" />
+    <AndroidResource Include="Resources\layout\activity_products.axml" />
     <AndroidResource Include="Resources\layout\item_pharmacy.axml" />
     <AndroidResource Include="Resources\layout\item_product.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\bglogin.png" />
@@ -232,40 +232,30 @@
     <AndroidResource Include="Resources\mipmap-hdpi\face.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\fingerprint.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\logo.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\product.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\store.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\bglogin.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\cardback.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\cardfront.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\face.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\fingerprint.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\logo.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\product.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\store.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\bglogin.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\cardback.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\cardfront.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\face.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\fingerprint.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\logo.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\product.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\store.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\bglogin.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\cardback.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\cardfront.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\face.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\fingerprint.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\logo.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\product.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\store.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\bglogin.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\cardback.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\cardfront.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\face.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\fingerprint.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\logo.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\product.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\store.png" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />

@@ -8,6 +8,6 @@
 	<string name="products_title">Search</string>
 	<string name="mycard_title">My Card</string>
 	<string name="pharmacy_title">Pharmacy</string>
-    <string name="pharmacy_searchproducts">Search Product</string>
+    <string name="pharmacy_searchproducts">Search Products</string>
     <string name="indications">Indications</string>
 </resources>

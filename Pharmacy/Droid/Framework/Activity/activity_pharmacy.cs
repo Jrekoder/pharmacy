@@ -22,6 +22,7 @@ namespace Pharmacy.Droid
         private TextView pharmacy_title, pharmacy_subtitle, pharmacy_state, pharmacy_city, pharmacy_address = null;
         private Pharmacy pharmacy = null;
         private MapView mMapView = null;
+        private Button search = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,6 +30,8 @@ namespace Pharmacy.Droid
 
             // Create your application here
             SetContentView(Resource.Layout.activity_pharmacy);
+
+            search = FindViewById<Button> (Resource.Id.search_products);
 
             var toolbar = FindViewById<Toolbar> (Resource.Id.main_toolbar);
             //Toolbar will now take on default Action Bar characteristics
@@ -100,12 +103,14 @@ namespace Pharmacy.Droid
         {
             base.OnResume();
             mMapView.OnResume();
+            search.Click += Search_Products_Click;
         }
 
         protected override void OnPause()
         {
             base.OnPause();
             mMapView.OnPause();
+            search.Click -= Search_Products_Click;
         }
 
         public override void OnBackPressed()
@@ -132,7 +137,23 @@ namespace Pharmacy.Droid
 			pharmacy_city = FindViewById<TextView>(Resource.Id.pharmacy_city);
             pharmacy_address = FindViewById<TextView>(Resource.Id.pharmacy_address);
             mMapView = (MapView)FindViewById(Resource.Id.mapView);
-           
+        }
+
+        private void Search_Products_Click (object sender, EventArgs e)
+        {
+            Intent intent = new Intent (this, typeof (activity_products));
+            string str = JsonConvert.SerializeObject (null);
+
+            if(string.IsNullOrEmpty (str) || str == "null")
+            {
+                throw new Exception ("Empty or Null object in pharmacy parameter!");
+            }
+
+            intent.PutExtra ("pharmacy", str);
+            Bundle bndlanimation = ActivityOptions.MakeCustomAnimation (this, Resource.Animation.slide_in, Resource.Animation.slide_out).ToBundle ();
+
+            this.StartActivity (intent, bndlanimation);
+
         }
     }
 }

@@ -31,13 +31,13 @@ namespace Pharmacy.Droid.UITests
         [Test]
         public void Login()
         {
-            app.Query(x => x.Class("EditText"));
-			app.EnterText(x => x.Id("login_username"), "rcervantes@outlook.com");
-			app.Back();
-			app.EnterText(x => x.Id("login_password"), "password");
-			app.Back();
-			app.Query(x => x.Class("Button"));
-			app.Tap(x => x.Id("login"));
+            //app.Repl ();
+            app.Screenshot ("Tap Login");
+            app.Tap (x=>x.Id ("login"));
+            app.Screenshot ("ScrollDown List");
+            app.ScrollDown (x => x.Id ("sliding_layout"), ScrollStrategy.Gesture, 0.67, 200);
+            app.Screenshot ("Tap Pharmacy");
+            app.Tap (x => x.Class ("AppCompatTextView").Text ("GRUPO DIAZ BARRIGA"));
         }
 
     }
