@@ -142,7 +142,7 @@ namespace Pharmacy.Droid
         private void Search_Products_Click (object sender, EventArgs e)
         {
             Intent intent = new Intent (this, typeof (activity_products));
-            string str = JsonConvert.SerializeObject (pharmacy);
+            string str = JsonConvert.SerializeObject (null);
 
             if(string.IsNullOrEmpty (str) || str == "null")
             {
