@@ -8,25 +8,23 @@ namespace Pharmacy.Droid
     [Activity]
     public abstract class BaseActivity : AppCompatActivity
     {
-        protected override void OnCreate (Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            Window.AddFlags (WindowManagerFlags.DrawsSystemBarBackgrounds);
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 
-            base.OnCreate (savedInstanceState);
+            base.OnCreate(savedInstanceState);
         }
 
-
-        protected override void OnStart ()
+        protected override void OnStart()
         {
-            base.OnStart ();
+            base.OnStart();
 
             //HockeyApp.Android.Tracking.StartUsage (this);
         }
 
-
-        protected override void OnStop ()
+        protected override void OnStop()
         {
-            base.OnStop ();
+            base.OnStop();
 
             //HockeyApp.Android.Tracking.StopUsage (this);
         }

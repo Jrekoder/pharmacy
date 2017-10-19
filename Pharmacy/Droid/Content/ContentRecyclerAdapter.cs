@@ -6,21 +6,18 @@ namespace Pharmacy.Droid
 {
     public class ContentRecyclerAdapter : RecyclerViewAdapter<AvContent, ContentViewHolder>//, FastScrollRecyclerView.ISectionedAdapter
     {
-        public ContentRecyclerAdapter (IList<AvContent> dataSet) : base (dataSet)
+        public ContentRecyclerAdapter(IList<AvContent> dataSet) : base(dataSet)
         {
         }
 
-
-        protected override ContentViewHolder CreateViewHolder (LayoutInflater inflater, ViewGroup parent)
+        protected override ContentViewHolder CreateViewHolder(LayoutInflater inflater, ViewGroup parent)
         {
             //var rootView = inflater.Inflate (Resource.Layout.PartnerCardView, parent, false);
 
-            return new ContentViewHolder (new View (parent.Context));
+            return new ContentViewHolder(new View(parent.Context));
         }
 
-
         //#region FastScrollRecyclerView.ISectionedAdapter Members
-
 
         //public string GetSectionName (int position)
         //{
@@ -29,7 +26,6 @@ namespace Pharmacy.Droid
 
         //  return partner.Name.Substring (0, 1).ToUpper ();
         //}
-
 
         //#endregion
     }

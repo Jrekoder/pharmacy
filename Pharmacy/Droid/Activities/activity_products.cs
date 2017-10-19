@@ -8,9 +8,9 @@ using Android.Widget;
 
 namespace Pharmacy.Droid
 {
-    [Activity (Label = "@string/products_title",
+    [Activity(Label = "@string/products_title",
           Icon = "@mipmap/icon",
-          LaunchMode = Android.Content.PM.LaunchMode.SingleTop, ParentActivity = typeof (activity_pharmacy),
+          LaunchMode = Android.Content.PM.LaunchMode.SingleTop, ParentActivity = typeof(activity_pharmacy),
           ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class activity_products : AppCompatActivity
     {
@@ -19,18 +19,18 @@ namespace Pharmacy.Droid
 
         public activity_products()
         {
-            products = Product.LoadProducts ();
+            products = Product.LoadProducts();
         }
 
-        protected override void OnCreate (Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate (savedInstanceState);
+            base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView (Resource.Layout.activity_products);
+            SetContentView(Resource.Layout.activity_products);
 
-            this.mAdapter = new ProductListAdapter (this);
-            ((ListView)FindViewById (Resource.Id.ListProducts)).Adapter = this.mAdapter;
+            this.mAdapter = new ProductListAdapter(this);
+            ((ListView)FindViewById(Resource.Id.ListProducts)).Adapter = this.mAdapter;
         }
 
         private class ProductListAdapter : BaseAdapter
@@ -39,7 +39,6 @@ namespace Pharmacy.Droid
             private List<Product> products = null;
             public ProductListAdapter(activity_products activity_products)
             {
-
                 this.activity_products = activity_products;
                 this.products = activity_products.products;
             }
@@ -50,7 +49,6 @@ namespace Pharmacy.Droid
                 {
                     return products.Count;
                 }
-
             }
 
             public override Java.Lang.Object GetItem(int position)
@@ -67,7 +65,7 @@ namespace Pharmacy.Droid
             {
                 if (convertView == null)
                 {
-                    LayoutInflater layoutInflater = (LayoutInflater) Android.App.Application.Context.GetSystemService (Context.LayoutInflaterService);
+                    LayoutInflater layoutInflater = (LayoutInflater)Android.App.Application.Context.GetSystemService(Context.LayoutInflaterService);
                     convertView = layoutInflater.Inflate(Resource.Layout.item_product, parent, false);
                 }
                 convertView.Id = position;
@@ -79,6 +77,5 @@ namespace Pharmacy.Droid
                 return convertView;
             }
         }
-
     }
 }

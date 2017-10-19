@@ -10,6 +10,5 @@ namespace Pharmacy.Droid
 {
     public class SettingsFragment : PreferenceFragment
     {
-        
     }
 }

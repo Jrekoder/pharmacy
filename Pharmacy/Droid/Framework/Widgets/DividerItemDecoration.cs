@@ -24,102 +24,96 @@ using Android.Graphics;
 
 namespace Pharmacy.Droid
 {
-	public class DividerItemDecoration : RecyclerView.ItemDecoration
-	{
-		int [] Attrs = { Android.Resource.Attribute.ListDivider };
+    public class DividerItemDecoration : RecyclerView.ItemDecoration
+    {
+        int[] Attrs = { Android.Resource.Attribute.ListDivider };
 
-		public const int HorizontalList = LinearLayoutManager.Horizontal;
-		public const int VerticalList = LinearLayoutManager.Vertical;
+        public const int HorizontalList = LinearLayoutManager.Horizontal;
+        public const int VerticalList = LinearLayoutManager.Vertical;
 
-		Drawable divider;
-		int orientation;
+        Drawable divider;
+        int orientation;
 
+        public DividerItemDecoration(Context context, int orientation)
+        {
+            var a = context.ObtainStyledAttributes(Attrs);
+            divider = a.GetDrawable(0);
+            a.Recycle();
+            Orientation = orientation;
+        }
 
-		public DividerItemDecoration (Context context, int orientation)
-		{
-			var a = context.ObtainStyledAttributes (Attrs);
-			divider = a.GetDrawable (0);
-			a.Recycle ();
-			Orientation = orientation;
-		}
+        /// <summary>
+        /// Gets or sets orientation
+        /// </summary>
+        public int Orientation
+        {
+            get { return orientation; }
+            set
+            {
+                if (value != HorizontalList && value != VerticalList)
+                    throw new ArgumentException("Invalid orientation", nameof(value));
+                orientation = value;
+            }
+        }
 
+        public void DrawVertical(Canvas c, RecyclerView parent)
+        {
+            var left = parent.PaddingLeft;
+            var right = parent.Right - parent.PaddingRight;
 
-		/// <summary>
-		/// Gets or sets orientation
-		/// </summary>
-		public int Orientation
-		{
-			get { return orientation; }
-			set
-			{
-				if (value != HorizontalList && value != VerticalList)
-					throw new ArgumentException ("Invalid orientation", nameof (value));
-				orientation = value;
-			}
-		}
+            var childCount = parent.ChildCount;
 
+            for (int i = 0; i < childCount; i++)
+            {
+                var child = parent.GetChildAt(i);
+                var layoutParams = child.LayoutParameters.JavaCast<RecyclerView.MarginLayoutParams>();
+                var top = child.Bottom + layoutParams.BottomMargin;
+                var bottom = top + divider.IntrinsicHeight;
+                divider.SetBounds(left, top, right, bottom);
+                divider.Draw(c);
+            }
+        }
 
-		public void DrawVertical (Canvas c, RecyclerView parent)
-		{
-			var left = parent.PaddingLeft;
-			var right = parent.Right - parent.PaddingRight;
+        public void DrawHorizontal(Canvas c, RecyclerView parent)
+        {
+            var top = parent.PaddingTop;
+            var bottom = parent.PaddingBottom;
 
-			var childCount = parent.ChildCount;
+            var childCount = parent.ChildCount;
 
-			for (int i = 0; i < childCount; i++)
-			{
-				var child = parent.GetChildAt (i);
-				var layoutParams = child.LayoutParameters.JavaCast<RecyclerView.MarginLayoutParams> ();
-				var top = child.Bottom + layoutParams.BottomMargin;
-				var bottom = top + divider.IntrinsicHeight;
-				divider.SetBounds (left, top, right, bottom);
-				divider.Draw (c);
-			}
-		}
+            for (int i = 0; i < childCount; i++)
+            {
+                var child = parent.GetChildAt(i);
+                var layoutParams = child.LayoutParameters.JavaCast<RecyclerView.MarginLayoutParams>();
+                var left = child.Right + layoutParams.RightMargin;
+                var right = left + divider.IntrinsicHeight;
+                divider.SetBounds(left, top, right, bottom);
+                divider.Draw(c);
+            }
+        }
 
+        public override void GetItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state)
+        {
+            if (orientation == VerticalList)
+            {
+                outRect.Set(0, 0, 0, divider.IntrinsicHeight);
+            }
+            else
+            {
+                outRect.Set(0, 0, divider.IntrinsicWidth, 0);
+            }
+        }
 
-		public void DrawHorizontal (Canvas c, RecyclerView parent)
-		{
-			var top = parent.PaddingTop;
-			var bottom = parent.PaddingBottom;
-
-			var childCount = parent.ChildCount;
-
-			for (int i = 0; i < childCount; i++)
-			{
-				var child = parent.GetChildAt (i);
-				var layoutParams = child.LayoutParameters.JavaCast<RecyclerView.MarginLayoutParams> ();
-				var left = child.Right + layoutParams.RightMargin;
-				var right = left + divider.IntrinsicHeight;
-				divider.SetBounds (left, top, right, bottom);
-				divider.Draw (c);
-			}
-		}
-
-
-		public override void GetItemOffsets (Rect outRect, View view, RecyclerView parent, RecyclerView.State state)
-		{
-			if (orientation == VerticalList)
-			{
-				outRect.Set (0, 0, 0, divider.IntrinsicHeight);
-			}
-			else
-			{
-				outRect.Set (0, 0, divider.IntrinsicWidth, 0);
-			}
-		}
-
-
-		public override void OnDraw (Canvas c, RecyclerView parent, RecyclerView.State state)
-		{
-			if (orientation == VerticalList)
-			{
-				DrawVertical (c, parent);
-			}
-			else
-			{
-				DrawHorizontal (c, parent);
-			}
-		}
-	}
+        public override void OnDraw(Canvas c, RecyclerView parent, RecyclerView.State state)
+        {
+            if (orientation == VerticalList)
+            {
+                DrawVertical(c, parent);
+            }
+            else
+            {
+                DrawHorizontal(c, parent);
+            }
+        }
+    }
 }

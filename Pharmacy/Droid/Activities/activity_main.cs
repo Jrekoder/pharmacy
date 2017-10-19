@@ -21,37 +21,37 @@ namespace Pharmacy.Droid
     {
         TabFragmentPagerAdapter PagerAdapter;
 
-        protected override void OnCreate (Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             //push notifications
             activity_main.instance = this;
-            this.RegisterGCM ();
+            this.RegisterGCM();
 
-            base.OnCreate (savedInstanceState);
+            base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
-            SetContentView (Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.activity_main);
 
-            var toolbar = FindViewById<Toolbar> (Resource.Id.main_toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
             //Toolbar will now take on default Action Bar characteristics
-            SetSupportActionBar (toolbar);
+            SetSupportActionBar(toolbar);
 
-            setupViewPager ();
+            setupViewPager();
         }
 
-        public override bool OnCreateOptionsMenu (Android.Views.IMenu menu)
+        public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
         {
-            MenuInflater.Inflate (Resource.Menu.menu_settings, menu);
-            return base.OnCreateOptionsMenu (menu);
+            MenuInflater.Inflate(Resource.Menu.menu_settings, menu);
+            return base.OnCreateOptionsMenu(menu);
         }
 
-        public override bool OnOptionsItemSelected (IMenuItem item)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
             {
                 case Resource.Id.action_settings:
 
-                    Toast.MakeText (this, "Settings selected", ToastLength.Short).Show ();
+                    Toast.MakeText(this, "Settings selected", ToastLength.Short).Show();
 
                     //FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction ();
                     //SettingsFragment settings = new SettingsFragment ();
@@ -60,37 +60,38 @@ namespace Pharmacy.Droid
                     //fragmentTx.Commit ();
 
                     break;
+
                 default:
                     break;
             }
 
-            return base.OnOptionsItemSelected (item);
+            return base.OnOptionsItemSelected(item);
         }
 
-        void setupViewPager ()
+        void setupViewPager()
         {
-            PagerAdapter = new TabFragmentPagerAdapter (this, SupportFragmentManager);
-            PagerAdapter.AddFragment (new fragment_pharmacies (this));
-            PagerAdapter.AddFragment (new fragment_assistant ());
+            PagerAdapter = new TabFragmentPagerAdapter(this, SupportFragmentManager);
+            PagerAdapter.AddFragment(new fragment_pharmacies(this));
+            PagerAdapter.AddFragment(new fragment_assistant());
 
-            var viewPager = FindViewById<ViewPager> (Resource.Id.main_viewPager);
+            var viewPager = FindViewById<ViewPager>(Resource.Id.main_viewPager);
             viewPager.Adapter = PagerAdapter;
 
-            var tabLayout = FindViewById<TabLayout> (Resource.Id.main_tabLayout);
+            var tabLayout = FindViewById<TabLayout>(Resource.Id.main_tabLayout);
             tabLayout.TabMode = TabLayout.ModeFixed;
             tabLayout.TabGravity = TabLayout.GravityFill;
-            tabLayout.SetupWithViewPager (viewPager);
+            tabLayout.SetupWithViewPager(viewPager);
 
-            PagerAdapter.FillTabLayout (tabLayout);
+            PagerAdapter.FillTabLayout(tabLayout);
 
             viewPager.PageSelected += (sender, e) =>
             {
                 if (e.Position == 0)
-                    Analytics.TrackEvent ("View: Pharmacies");
+                    Analytics.TrackEvent("View: Pharmacies");
 
                 if (e.Position == 1)
-                    Analytics.TrackEvent ("View: Assistant");
-                
+                    Analytics.TrackEvent("View: Assistant");
+
                 //Tier = (PartnerTiers)e.Position;
 
                 ////update the query listener
@@ -103,40 +104,38 @@ namespace Pharmacy.Droid
             };
         }
 
+        #region push notifications
 
-		#region push notifications
-
-        public void RegisterGCM ()
+        public void RegisterGCM()
         {
-			GcmClient.CheckDevice (this);
-			GcmClient.CheckManifest (this);
-			GcmClient.Register (this, CustomBroadcastReceiver.senderIDs);
+            GcmClient.CheckDevice(this);
+            GcmClient.CheckManifest(this);
+            GcmClient.Register(this, CustomBroadcastReceiver.senderIDs);
         }
 
-		// Create a new instance field for this activity.
-		static activity_main instance = new activity_main ();
+        // Create a new instance field for this activity.
+        static activity_main instance = new activity_main();
 
-		// Return the current activity instance.
-		public static activity_main CurrentActivity
-		{
-			get
-			{
-				return instance;
-			}
-		}
+        // Return the current activity instance.
+        public static activity_main CurrentActivity
+        {
+            get
+            {
+                return instance;
+            }
+        }
 
-        static MobileServiceClient client = new MobileServiceClient (Constants.ApplicationURL);
+        static MobileServiceClient client = new MobileServiceClient(Constants.ApplicationURL);
 
-		// Return the Mobile Services client.
-		public MobileServiceClient CurrentClient
-		{
-			get
-			{
-				return client;
-			}
-		}
+        // Return the Mobile Services client.
+        public MobileServiceClient CurrentClient
+        {
+            get
+            {
+                return client;
+            }
+        }
 
-        #endregion
-
+        #endregion push notifications
     }
 }

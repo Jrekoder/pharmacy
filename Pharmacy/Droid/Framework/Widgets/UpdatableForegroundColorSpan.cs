@@ -6,53 +6,47 @@ using Android.Runtime;
 
 namespace Pharmacy.Droid
 {
-	public class UpdatableForegroundColorSpan : CharacterStyle, IParcelableSpan
-	{
-		Color color;
-		public Color ForegroundColor => color;
+    public class UpdatableForegroundColorSpan : CharacterStyle, IParcelableSpan
+    {
+        Color color;
+        public Color ForegroundColor => color;
 
-		public UpdatableForegroundColorSpan (Color color)
-		{
-			this.color = color;
-		}
+        public UpdatableForegroundColorSpan(Color color)
+        {
+            this.color = color;
+        }
 
+        public override void UpdateDrawState(TextPaint tp)
+        {
+            tp.Color = ForegroundColor;
+        }
 
-		public override void UpdateDrawState (TextPaint tp)
-		{
-			tp.Color = ForegroundColor;
-		}
+        public void UpdateColor(Color newColor)
+        {
+            color = newColor;
+        }
 
+        public void UpdateAlpha(byte alpha)
+        {
+            color.A = alpha;
+        }
 
-		public void UpdateColor (Color newColor)
-		{
-			color = newColor;
-		}
+        public int SpanTypeId
+        {
+            get
+            {
+                return 0;
+            }
+        }
 
+        public int DescribeContents()
+        {
+            return 0;
+        }
 
-		public void UpdateAlpha (byte alpha)
-		{
-			color.A = alpha;
-		}
-
-
-		public int SpanTypeId
-		{
-			get
-			{
-				return 0;
-			}
-		}
-
-
-		public int DescribeContents ()
-		{
-			return 0;
-		}
-
-
-		public void WriteToParcel (Parcel dest, [GeneratedEnum] ParcelableWriteFlags flags)
-		{
-			dest.WriteInt (ForegroundColor);
-		}
-	}
+        public void WriteToParcel(Parcel dest, [GeneratedEnum] ParcelableWriteFlags flags)
+        {
+            dest.WriteInt(ForegroundColor);
+        }
+    }
 }

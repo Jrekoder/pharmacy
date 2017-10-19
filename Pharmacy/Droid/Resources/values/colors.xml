@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-	
+
     <color name="green_line">#277f45</color>
 	<color name="green_button">#A2CD48</color>
 	<color name="green_pagertabstrip">#CFE4A7</color>
@@ -50,5 +50,4 @@
     <color name="xamarin_A200">#b1d6ee</color>
     <color name="xamarin_A400">#3091d1</color>
     <color name="xamarin_A700">#1e5d87</color>
-	
 </resources>

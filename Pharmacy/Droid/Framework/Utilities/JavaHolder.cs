@@ -1,12 +1,12 @@
 ﻿namespace Pharmacy.Droid
 {
-	public class JavaHolder : Java.Lang.Object
-	{
-		public readonly object Instance;
+    public class JavaHolder : Java.Lang.Object
+    {
+        public readonly object Instance;
 
-		public JavaHolder (object instance)
-		{
-			Instance = instance;
-		}
-	}
+        public JavaHolder(object instance)
+        {
+            Instance = instance;
+        }
+    }
 }

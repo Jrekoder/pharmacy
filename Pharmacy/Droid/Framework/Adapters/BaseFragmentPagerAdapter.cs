@@ -3,55 +3,52 @@ using Android.Support.V4.App;
 
 namespace Pharmacy.Droid
 {
-	/// <summary>
-	/// Base adapter for Fragments that tags Fragments to keep track of them and provide lookup/retrieval capabilities.
-	/// </summary>
-	public abstract class BaseFragmentPagerAdapter : FragmentPagerAdapter
-	{
-		readonly FragmentManager fragmentManager;
+    /// <summary>
+    /// Base adapter for Fragments that tags Fragments to keep track of them and provide lookup/retrieval capabilities.
+    /// </summary>
+    public abstract class BaseFragmentPagerAdapter : FragmentPagerAdapter
+    {
+        readonly FragmentManager fragmentManager;
 
-		string [] tags;
-		string [] Tags => tags ?? (tags = new string [Count]);
+        string[] tags;
+        string[] Tags => tags ?? (tags = new string[Count]);
 
+        protected BaseFragmentPagerAdapter(FragmentManager manager) : base(manager)
+        {
+            fragmentManager = manager;
+        }
 
-		protected BaseFragmentPagerAdapter (FragmentManager manager) : base (manager)
-		{
-			fragmentManager = manager;
-		}
+        public override Java.Lang.Object InstantiateItem(Android.Views.ViewGroup container, int position)
+        {
+            try
+            {
+                var obj = base.InstantiateItem(container, position);
 
+                // record the fragment tag here
+                if (obj is Fragment fragment)
+                {
+                    var tag = fragment.Tag;
+                    Tags[position] = tag;
+                }
 
-		public override Java.Lang.Object InstantiateItem (Android.Views.ViewGroup container, int position)
-		{
-			try
-			{
-				var obj = base.InstantiateItem (container, position);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                Log.Debug(ex.Message);
+            }
 
-				// record the fragment tag here
-				if (obj is Fragment fragment)
-				{
-					var tag = fragment.Tag;
-					Tags [position] = tag;
-				}
+            return null;
+        }
 
-				return obj;
-			}
-			catch (Exception ex)
-			{
-				Log.Debug (ex.Message);
-			}
+        public Fragment GetFragmentAtPosition(int position)
+        {
+            string tag = tags[position];
 
-			return null;
-		}
+            if (tag == null)
+                return null;
 
-
-		public Fragment GetFragmentAtPosition (int position)
-		{
-			string tag = tags [position];
-
-			if (tag == null)
-				return null;
-
-			return fragmentManager.FindFragmentByTag (tag);
-		}
-	}
+            return fragmentManager.FindFragmentByTag(tag);
+        }
+    }
 }

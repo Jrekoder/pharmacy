@@ -16,34 +16,30 @@ namespace Pharmacy.Droid
         static UpdatableForegroundColorSpan locationColorSpan;
         static RelativeSizeSpan locationSizeSpan;
 
-
-        public ContentViewHolder (View v) : base (v)
+        public ContentViewHolder(View v) : base(v)
         {
             if (locationColorSpan == null)
             {
-                locationColorSpan = new UpdatableForegroundColorSpan (ItemView.Context.GetColorFromResource (Resource.Color.elite_orange));
+                locationColorSpan = new UpdatableForegroundColorSpan(ItemView.Context.GetColorFromResource(Resource.Color.elite_orange));
             }
 
             if (locationSizeSpan == null)
             {
-                locationSizeSpan = new RelativeSizeSpan (.8f);
+                locationSizeSpan = new RelativeSizeSpan(.8f);
             }
         }
 
-
-        public override void FindViews (View rootView)
+        public override void FindViews(View rootView)
         {
             //logo = (ImageView) rootView.FindViewById (Resource.Id.partner_logo);
             //name = (TextView) rootView.FindViewById (Resource.Id.partner_name);
             //location = (TextView) rootView.FindViewById (Resource.Id.partner_location);
         }
 
-
-        public override void SetData (AvContent data)
+        public override void SetData(AvContent data)
         {
             //logo.SetImageDrawable (null);
-            name.SetText (data.Name, TextView.BufferType.Normal);
-
+            name.SetText(data.Name, TextView.BufferType.Normal);
 
             //var primaryLocation = data.GetPrimaryLocationName ();
             //var locationDetails = data.GetLocationDetails ();

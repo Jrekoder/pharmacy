@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{F17724E4-DA0F-45D5-A98B-D29318658CD3}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Pharmacy.Domain</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Content\AvContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\AvContentTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\Content.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ContentState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Log.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Content\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
+  </ItemGroup>
+</Project>

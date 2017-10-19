@@ -15,8 +15,8 @@ namespace Pharmacy.Droid
 {
     [Activity(Label = "@string/pharmacy_title",
               Icon = "@mipmap/icon",
-			  LaunchMode = Android.Content.PM.LaunchMode.SingleTop, ParentActivity = typeof(activity_main),
-			  ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+              LaunchMode = Android.Content.PM.LaunchMode.SingleTop, ParentActivity = typeof(activity_main),
+              ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class activity_pharmacy : AppCompatActivity
     {
         private TextView pharmacy_title, pharmacy_subtitle, pharmacy_state, pharmacy_city, pharmacy_address = null;
@@ -31,12 +31,12 @@ namespace Pharmacy.Droid
             // Create your application here
             SetContentView(Resource.Layout.activity_pharmacy);
 
-            search = FindViewById<Button> (Resource.Id.search_products);
+            search = FindViewById<Button>(Resource.Id.search_products);
 
-            var toolbar = FindViewById<Toolbar> (Resource.Id.main_toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
             //Toolbar will now take on default Action Bar characteristics
-            SetSupportActionBar (toolbar);
-            SupportActionBar.SetDisplayHomeAsUpEnabled (true);
+            SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             string pharmacy_received = Intent.GetStringExtra("pharmacy");
             pharmacy = JsonConvert.DeserializeObject<Pharmacy>(pharmacy_received);
@@ -58,14 +58,12 @@ namespace Pharmacy.Droid
             }
 
             mMapView.GetMapAsync(new CustomMapReady(this));
-
-
         }
 
-        protected override void OnStart ()
+        protected override void OnStart()
         {
-            base.OnStart ();
-            Analytics.TrackEvent ("View: Pharmacy Detail");
+            base.OnStart();
+            Analytics.TrackEvent("View: Pharmacy Detail");
         }
 
         private class CustomMapReady : Java.Lang.Object, IOnMapReadyCallback
@@ -92,7 +90,7 @@ namespace Pharmacy.Droid
                 mo.SetTitle(pharma.NombreComercial);
                 mo.SetSnippet(pharma.NombreSucursal);
                 googleMap.AddMarker(mo).SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueOrange));
-               
+
                 // For zooming automatically to the location of the marker
                 CameraPosition cameraPosition = new CameraPosition.Builder().Target(new LatLng(pharma.Latitud, pharma.Longitud)).Zoom(14).Build();
                 googleMap.AnimateCamera(CameraUpdateFactory.NewCameraPosition(cameraPosition));
@@ -122,9 +120,9 @@ namespace Pharmacy.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            if(item.ItemId == Android.Resource.Id.Home)
+            if (item.ItemId == Android.Resource.Id.Home)
             {
-                OnBackPressed();       
+                OnBackPressed();
             }
             return base.OnOptionsItemSelected(item);
         }
@@ -132,28 +130,27 @@ namespace Pharmacy.Droid
         private void LoadViews()
         {
             pharmacy_title = FindViewById<TextView>(Resource.Id.pharmacy_title);
-			pharmacy_subtitle = FindViewById<TextView>(Resource.Id.pharmacy_subtitle);
-			pharmacy_state = FindViewById<TextView>(Resource.Id.pharmacy_state);
-			pharmacy_city = FindViewById<TextView>(Resource.Id.pharmacy_city);
+            pharmacy_subtitle = FindViewById<TextView>(Resource.Id.pharmacy_subtitle);
+            pharmacy_state = FindViewById<TextView>(Resource.Id.pharmacy_state);
+            pharmacy_city = FindViewById<TextView>(Resource.Id.pharmacy_city);
             pharmacy_address = FindViewById<TextView>(Resource.Id.pharmacy_address);
             mMapView = (MapView)FindViewById(Resource.Id.mapView);
         }
 
-        private void Search_Products_Click (object sender, EventArgs e)
+        private void Search_Products_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent (this, typeof (activity_products));
-            string str = JsonConvert.SerializeObject (pharmacy);
+            Intent intent = new Intent(this, typeof(activity_products));
+            string str = JsonConvert.SerializeObject(pharmacy);
 
-            if(string.IsNullOrEmpty (str) || str == "null")
+            if (string.IsNullOrEmpty(str) || str == "null")
             {
-                throw new Exception ("Empty or Null object in pharmacy parameter!");
+                throw new Exception("Empty or Null object in pharmacy parameter!");
             }
 
-            intent.PutExtra ("pharmacy", str);
-            Bundle bndlanimation = ActivityOptions.MakeCustomAnimation (this, Resource.Animation.slide_in, Resource.Animation.slide_out).ToBundle ();
+            intent.PutExtra("pharmacy", str);
+            Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Animation.slide_in, Resource.Animation.slide_out).ToBundle();
 
-            this.StartActivity (intent, bndlanimation);
-
+            this.StartActivity(intent, bndlanimation);
         }
     }
 }

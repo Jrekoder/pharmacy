@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props')" />
   <Import Project="..\Pharmacy.Domain\Pharmacy.Domain.projitems" Label="Shared" Condition="Exists('..\Pharmacy.Domain\Pharmacy.Domain.projitems')" />
@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Pharmacy.Droid</RootNamespace>
     <AssemblyName>Pharmacy.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -160,7 +160,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Services\CustomBroadcastReceiver.cs" />
     <Compile Include="Services\PushHandlerService.cs" />
-    <Compile Include="Activities\fragment_mycard.cs" />
+    <Compile Include="Fragments\fragment_mycard.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Framework\Activity\BaseActivity.cs" />
     <Compile Include="Framework\Adapters\BaseFragmentPagerAdapter.cs" />
@@ -170,7 +170,7 @@
     <Compile Include="Framework\Filters\IFilterableDataProvider.cs" />
     <Compile Include="Framework\Fragments\ITabFragment.cs" />
     <Compile Include="Framework\Fragments\RecyclerViewListFragment.cs" />
-    <Compile Include="Framework\Fragments\SettingsFragment.cs" />
+    <Compile Include="Fragments\fragment_settings.cs" />
     <Compile Include="Framework\Utilities\Extensions\ColorExtensions.cs" />
     <Compile Include="Framework\Utilities\Extensions\IntentExtensions.cs" />
     <Compile Include="Framework\Utilities\Extensions\ObjectExtensions.cs" />
@@ -191,12 +191,12 @@
     <Compile Include="Content\ContentRecyclerAdapter.cs" />
     <Compile Include="Content\ContentRecyclerFragment.cs" />
     <Compile Include="Content\ContentViewHolder.cs" />
-    <Compile Include="Framework\Fragments\fragment_pharmacies.cs" />
-    <Compile Include="Framework\Fragments\fragment_assistant.cs" />
-    <Compile Include="Framework\Activity\activity_pharmacy.cs" />
-    <Compile Include="Framework\Activity\activity_login.cs" />
-    <Compile Include="Framework\Activity\activity_main.cs" />
-    <Compile Include="Framework\Activity\activity_products.cs" />
+    <Compile Include="Fragments\fragment_pharmacies.cs" />
+    <Compile Include="Fragments\fragment_assistant.cs" />
+    <Compile Include="Activities\activity_pharmacy.cs" />
+    <Compile Include="Activities\activity_login.cs" />
+    <Compile Include="Activities\activity_main.cs" />
+    <Compile Include="Activities\activity_products.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -270,26 +270,7 @@
     <AndroidResource Include="Resources\color\tabbar_text.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Activities\" />
-    <Folder Include="Resources\anim\" />
-    <Folder Include="Resources\values\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-    <Folder Include="Framework\" />
-    <Folder Include="Framework\Activity\" />
-    <Folder Include="Framework\Adapters\" />
-    <Folder Include="Framework\Filters\" />
-    <Folder Include="Framework\Fragments\" />
-    <Folder Include="Framework\Utilities\" />
-    <Folder Include="Framework\Utilities\Extensions\" />
-    <Folder Include="Framework\ViewHolders\" />
-    <Folder Include="Framework\Widgets\" />
-    <Folder Include="Resources\menu\" />
-    <Folder Include="Resources\drawable\" />
-    <Folder Include="Content\" />
-    <Folder Include="Resources\color\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Tasks.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Tasks.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets')" />

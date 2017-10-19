@@ -5,11 +5,10 @@ using Android.Text;
 
 namespace Pharmacy.Droid
 {
-	public class StringExtensions
-	{
-		//public static SpannableString t ()
-		//{
-
-		//}
-	}
+    public class StringExtensions
+    {
+        //public static SpannableString t ()
+        //{
+        //}
+    }
 }

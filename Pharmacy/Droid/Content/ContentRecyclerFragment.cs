@@ -12,30 +12,24 @@ namespace Pharmacy.Droid
     {
         #region ITabFragment Members
 
-
         public string Title => "Content";
-
 
         public int Icon => Resource.Drawable.ic_tabbar_resources;
 
+        #endregion ITabFragment Members
 
-        #endregion
+        List<AvContent> DisplayContent = new List<AvContent>();
 
-
-        List<AvContent> DisplayContent = new List<AvContent> ();
-
-
-        public override void OnCreate (Bundle savedInstanceState)
+        public override void OnCreate(Bundle savedInstanceState)
         {
             ShowDividers = false;
 
-            base.OnCreate (savedInstanceState);
+            base.OnCreate(savedInstanceState);
         }
 
-
-        public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = base.OnCreateView (inflater, container, savedInstanceState);
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
 
             //color our scrollbar & popup according to the Tier
             //if (RecyclerView is FastScrollRecyclerView)
@@ -50,10 +44,9 @@ namespace Pharmacy.Droid
             return view;
         }
 
-
-        public override void OnStart ()
+        public override void OnStart()
         {
-            base.OnStart ();
+            base.OnStart();
 
             //if (DisplayContent.Count == 0)
             //{
@@ -71,20 +64,17 @@ namespace Pharmacy.Droid
             //}
         }
 
-
         #region implemented abstract members of RecyclerViewFragment
 
-
-        protected override RecyclerViewAdapter<AvContent, ContentViewHolder> GetAdapter ()
+        protected override RecyclerViewAdapter<AvContent, ContentViewHolder> GetAdapter()
         {
-            var adapter = new ContentRecyclerAdapter (DisplayContent);
+            var adapter = new ContentRecyclerAdapter(DisplayContent);
             //adapter.Filter = new PartnerFilter (adapter);
 
             return adapter;
         }
 
-
-        protected override void OnItemClick (View view, AvContent item)
+        protected override void OnItemClick(View view, AvContent item)
         {
             //var partner = item;//DisplayPartners [position];
             //var partnerLogoImageView = view.FindViewById<AppCompatImageView> (Resource.Id.partner_logo);
@@ -97,12 +87,9 @@ namespace Pharmacy.Droid
             //TransitionToActivity (detailIntent, partnerLogoImageView);
         }
 
-
-        #endregion
-
+        #endregion implemented abstract members of RecyclerViewFragment
 
         //#region SearchView.IOnQueryTextListener Members
-
 
         //public bool OnQueryTextChange (string query)
         //{
@@ -112,12 +99,10 @@ namespace Pharmacy.Droid
         //  return true;
         //}
 
-
         //public bool OnQueryTextSubmit (string query)
         //{
         //  return false;
         //}
-
 
         //#endregion
     }

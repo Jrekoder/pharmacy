@@ -6,8 +6,8 @@ namespace Pharmacy.Droid
     {
         IList<TData> AllItems { get; }
 
-        void SetFilterResults (IList<TData> items);
+        void SetFilterResults(IList<TData> items);
 
-        void ResetResults ();
+        void ResetResults();
     }
 }

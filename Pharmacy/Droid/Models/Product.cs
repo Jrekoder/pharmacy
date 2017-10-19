@@ -18,11 +18,11 @@ namespace Pharmacy.Droid
         {
             List<Product> result = new List<Product>();
 
-			result.Add(new Product("7501125197437", "ACICLOVIR 250 MG FA C/5", "PFIZER", 530));
-			result.Add(new Product("7501390912551", "CHOLAL MOD S-ALIME AMP10X5ML 431", "ITALMEX", 350));
-			result.Add(new Product("7501082212143", "CIALIS 20 MG TAB 1 002", "LILLY", 240));
-			result.Add(new Product("7501009071099", "PULMOZYME 2.5MG AMPS6X2.5ML", "ROCHE", 120));
-			result.Add(new Product("7501092720911", "EMPLAY RIOPAN GEL 250ML 15 TWPKB Y", "TAKEDA DE MEXICO", 450));
+            result.Add(new Product("7501125197437", "ACICLOVIR 250 MG FA C/5", "PFIZER", 530));
+            result.Add(new Product("7501390912551", "CHOLAL MOD S-ALIME AMP10X5ML 431", "ITALMEX", 350));
+            result.Add(new Product("7501082212143", "CIALIS 20 MG TAB 1 002", "LILLY", 240));
+            result.Add(new Product("7501009071099", "PULMOZYME 2.5MG AMPS6X2.5ML", "ROCHE", 120));
+            result.Add(new Product("7501092720911", "EMPLAY RIOPAN GEL 250ML 15 TWPKB Y", "TAKEDA DE MEXICO", 450));
 
             return result;
         }

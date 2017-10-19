@@ -16,17 +16,14 @@
 //			}
 //		}
 
-
 //		public CircleTransform (Context context) : base (context)
 //		{
 //		}
-
 
 //		protected override Bitmap Transform (IBitmapPool p0, Bitmap p1, int p2, int p3)
 //		{
 //			return circleCrop (p0, p1);
 //		}
-
 
 //		static Bitmap circleCrop (IBitmapPool pool, Bitmap source)
 //		{

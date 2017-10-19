@@ -5,7 +5,6 @@ namespace Pharmacy.Droid
 {
     public class Pharmacy
     {
-
         public static List<Pharmacy> LoadPharmacies()
         {
             List<Pharmacy> result = new List<Pharmacy>();
@@ -109,6 +108,5 @@ namespace Pharmacy.Droid
             get;
             set;
         }
-
     }
 }

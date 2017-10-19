@@ -5,10 +5,10 @@ namespace Pharmacy.Droid
 {
     public interface IViewHolder<TData>
     {
-        void FindViews (View rootView);
+        void FindViews(View rootView);
 
-        void SetData (TData data);
+        void SetData(TData data);
 
-        void SetClickHandler (Action<View, int> handler);
+        void SetClickHandler(Action<View, int> handler);
     }
 }

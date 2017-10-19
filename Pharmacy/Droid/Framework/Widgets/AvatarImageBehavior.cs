@@ -55,12 +55,10 @@
 //			//	Resource.Dimension.spacing_normal);
 //		}
 
-
 //		public override bool LayoutDependsOn (CoordinatorLayout parent, Java.Lang.Object child, Android.Views.View dependency)
 //		{
 //			return dependency is Android.Support.V7.Widget.Toolbar;
 //		}
-
 
 //		public override bool OnDependentViewChanged (CoordinatorLayout parent, Java.Lang.Object child, Android.Views.View dependency)
 //		{
@@ -96,7 +94,6 @@
 //			lp.Height = (int) (startHeight - heightToSubtract);
 //			imageView.LayoutParameters = lp;
 
-
 //			//if (expandedPercentageFactor < changeBehaviorPoint) {
 //			//	float heightFactor = (changeBehaviorPoint - expandedPercentageFactor) / changeBehaviorPoint;
 
@@ -129,7 +126,6 @@
 
 //			return true;
 //		}
-
 
 //		void maybeInitProperties (ImageView child, View dependency)
 //		{
@@ -164,7 +160,6 @@
 //			}
 //#pragma warning restore RECS0018 // Comparison of floating point numbers with equality operator
 //		}
-
 
 //		public int getStatusBarHeight ()
 //		{

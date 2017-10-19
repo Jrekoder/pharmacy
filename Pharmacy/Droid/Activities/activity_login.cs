@@ -24,20 +24,20 @@ namespace Pharmacy.Droid
         private ImageView app_logo = null;
         private ImageView logo_reference = null;
         private Button login = null;
-		
+
         // Client reference.
-		private MobileServiceClient client;
+        private MobileServiceClient client;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Window.RequestFeature (WindowFeatures.NoTitle);
-			
-            // Init Mobile Center Analytics and Crashes
-            MobileCenter.Start (Constants.MobileCenterAppID, typeof (Analytics), typeof (Crashes));
+            Window.RequestFeature(WindowFeatures.NoTitle);
 
-			// Create the client instance, using the mobile app backend URL.
-			client = new MobileServiceClient (Constants.ApplicationURL);
+            // Init Mobile Center Analytics and Crashes
+            MobileCenter.Start(Constants.MobileCenterAppID, typeof(Analytics), typeof(Crashes));
+
+            // Create the client instance, using the mobile app backend URL.
+            client = new MobileServiceClient(Constants.ApplicationURL);
 
             // Create your application here
             SetContentView(Resource.Layout.activity_login);
@@ -60,10 +60,7 @@ namespace Pharmacy.Droid
 
         private void Login_Click(object sender, EventArgs e)
         {
-            //if (await Authenticate ())
-            //{
-                StartMainActivity ();
-            //}
+            StartMainActivity();
         }
 
         private void InitTransition()
@@ -74,7 +71,6 @@ namespace Pharmacy.Droid
                 {
                     ExecuteTransition();
                 });
-
             });
         }
 
@@ -112,37 +108,37 @@ namespace Pharmacy.Droid
             StartActivity(intent);
         }
 
-		// Define a authenticated user.
-		private MobileServiceUser user;
-		private async Task<bool> Authenticate ()
-		{
-			var success = false;
-			try
-			{
-                user = await client.LoginAsync (this, MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory, "schema");
-				CreateAndShowDialog (string.Format ("you are now logged in - {0}", user.UserId), "Logged in!");
+        // Define a authenticated user.
+        private MobileServiceUser user;
+        private async Task<bool> Authenticate()
+        {
+            var success = false;
+            try
+            {
+                user = await client.LoginAsync(this, MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory, "schema");
+                CreateAndShowDialog(string.Format("you are now logged in - {0}", user.UserId), "Logged in!");
 
-				success = true;
-			}
-			catch (Exception ex)
-			{
-				CreateAndShowDialog (ex, "Authentication failed");
-			}
-			return success;
-		}
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                CreateAndShowDialog(ex, "Authentication failed");
+            }
+            return success;
+        }
 
-		private void CreateAndShowDialog (Exception exception, String title)
-		{
-			CreateAndShowDialog (exception.Message, title);
-		}
+        private void CreateAndShowDialog(Exception exception, String title)
+        {
+            CreateAndShowDialog(exception.Message, title);
+        }
 
-		private void CreateAndShowDialog (string message, string title)
-		{
-			AlertDialog.Builder builder = new AlertDialog.Builder (this);
+        private void CreateAndShowDialog(string message, string title)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-			builder.SetMessage (message);
-			builder.SetTitle (title);
-			builder.Create ().Show ();
-		}
+            builder.SetMessage(message);
+            builder.SetTitle(title);
+            builder.Create().Show();
+        }
     }
 }
