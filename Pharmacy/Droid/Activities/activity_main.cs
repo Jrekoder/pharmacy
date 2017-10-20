@@ -125,7 +125,7 @@ namespace Pharmacy.Droid
             }
         }
 
-        static MobileServiceClient client = new MobileServiceClient(Constants.ApplicationURL);
+        static MobileServiceClient client = new MobileServiceClient(Settings.ApplicationUrl);
 
         // Return the Mobile Services client.
         public MobileServiceClient CurrentClient

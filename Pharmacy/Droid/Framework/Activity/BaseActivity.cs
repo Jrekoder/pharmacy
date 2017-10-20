@@ -18,15 +18,11 @@ namespace Pharmacy.Droid
         protected override void OnStart()
         {
             base.OnStart();
-
-            //HockeyApp.Android.Tracking.StartUsage (this);
         }
 
         protected override void OnStop()
         {
             base.OnStop();
-
-            //HockeyApp.Android.Tracking.StopUsage (this);
         }
     }
 }

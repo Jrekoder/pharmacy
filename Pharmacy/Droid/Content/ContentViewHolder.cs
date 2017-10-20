@@ -9,9 +9,9 @@ namespace Pharmacy.Droid
 {
     public class ContentViewHolder : ViewHolder<AvContent>
     {
-        ImageView logo;
-        TextView name;
-        TextView location;
+        //ImageView logo;
+        TextView name = null;
+        //TextView location;
 
         static UpdatableForegroundColorSpan locationColorSpan;
         static RelativeSizeSpan locationSizeSpan;
