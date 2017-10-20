@@ -1,7 +1,7 @@
-﻿using CognitiveLocator.Helpers;
-using Microsoft.Azure.WebJobs;
+﻿using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Pharmacy.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -31,8 +31,8 @@ namespace Pharmacy.Functions
             result.Add(nameof(Settings.MobileCenterID_Android), Settings.MobileCenterID_Android);
             result.Add(nameof(Settings.NotificationAccessSignature), Settings.NotificationAccessSignature);
             result.Add(nameof(Settings.NotificationHubName), Settings.NotificationHubName);
-            result.Add(nameof(Settings.WebChatUrl), Settings.WebChatUrl); 
-            result.Add(nameof(Settings.FirebaseAppSenderId), Settings.FirebaseAppSenderId); 
+            result.Add(nameof(Settings.WebChatUrl), Settings.WebChatUrl);
+            result.Add(nameof(Settings.FirebaseAppSenderId), Settings.FirebaseAppSenderId);
             return req.CreateResponse(HttpStatusCode.OK, result);
         }
     }

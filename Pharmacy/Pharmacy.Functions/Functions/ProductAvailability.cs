@@ -1,10 +1,10 @@
-﻿using CognitiveLocator.Helpers;
-using Microsoft.Azure.Documents;
+﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Pharmacy.Domain;
+using Pharmacy.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
