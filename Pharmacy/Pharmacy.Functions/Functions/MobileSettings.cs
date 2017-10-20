@@ -28,9 +28,11 @@ namespace Pharmacy.Functions
             }
 
             Dictionary<string, string> result = new Dictionary<string, string>();
-            result.Add(nameof(Settings.AzureWebJobsStorage), Settings.AzureWebJobsStorage);
             result.Add(nameof(Settings.MobileCenterID_Android), Settings.MobileCenterID_Android);
-            result.Add(nameof(Settings.MobileCenterID_iOS), Settings.MobileCenterID_iOS);
+            result.Add(nameof(Settings.NotificationAccessSignature), Settings.NotificationAccessSignature);
+            result.Add(nameof(Settings.NotificationHubName), Settings.NotificationHubName);
+            result.Add(nameof(Settings.WebChatUrl), Settings.WebChatUrl); 
+            result.Add(nameof(Settings.FirebaseAppSenderId), Settings.FirebaseAppSenderId); 
             return req.CreateResponse(HttpStatusCode.OK, result);
         }
     }

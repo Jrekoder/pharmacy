@@ -19,6 +19,8 @@ namespace Pharmacy.Functions
         public static string CryptographyKey = Environment.GetEnvironmentVariable("Cryptography_Key");
 
         public static string MobileCenterID_Android = Environment.GetEnvironmentVariable("MobileCenterID_Android");
-        public static string MobileCenterID_iOS = Environment.GetEnvironmentVariable("MobileCenterID_iOS");
+
+        public static string WebChatUrl = Environment.GetEnvironmentVariable("WebChat_Url");
+        public static string FirebaseAppSenderId = Environment.GetEnvironmentVariable("FirebaseAppSenderId");
     }
 }
