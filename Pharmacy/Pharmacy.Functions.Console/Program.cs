@@ -46,7 +46,9 @@ namespace Pharmacy.Functions.Console
                 r -= 18; b -= 9;
                 Colorful.Console.WriteLine("4.- Search product availability", Color.FromArgb(r, g, b));
                 r -= 18; b -= 9;
-                Colorful.Console.WriteLine("5.- Exit", Color.FromArgb(r, g, b));
+                Colorful.Console.WriteLine("5.- Request new token to get mobile settings", Color.FromArgb(r, g, b));
+                r -= 18; b -= 9;
+                Colorful.Console.WriteLine("6.- Exit", Color.FromArgb(r, g, b));
                 r -= 18; b -= 9;
 
                 Colorful.Console.Write("\nPick an option:", Color.FromArgb(r, g, b));
@@ -75,6 +77,12 @@ namespace Pharmacy.Functions.Console
                         filter.ProductName = productName;
                         string sdresult = await SearchProduct(filter);
                         System.Console.WriteLine(sdresult);
+                        System.Console.ReadKey();
+                        break;
+
+                    case "5":
+                        string sresult = await RequestMobileSettings();
+                        System.Console.WriteLine(sresult);
                         System.Console.ReadKey();
                         break;
                 }
@@ -181,6 +189,43 @@ namespace Pharmacy.Functions.Console
             using (var client = new HttpClient())
             {
                 var service = $"http://localhost:7071/api/ProductAvailability/";
+                byte[] byteData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(request));
+                using (var content = new ByteArrayContent(byteData))
+                {
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var httpResponse = client.PostAsync(service, content).Result;
+
+                    if (httpResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        System.Console.WriteLine(httpResponse.StatusCode);
+                        return await httpResponse.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        System.Console.WriteLine(httpResponse.StatusCode);
+                    }
+                }
+            }
+            return null;
+        }
+
+        public static async Task<string> RequestMobileSettings()
+        {
+            string token = string.Empty;
+
+            byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
+            byte[] key = Guid.NewGuid().ToByteArray();
+            token = Convert.ToBase64String(time.Concat(key).ToArray());
+            token = SecurityHelper.Encrypt(token, Settings.CryptographyKey);
+            System.Console.WriteLine($"Token: {token}");
+
+            MobileSettingsRequest request = new MobileSettingsRequest();
+            request.Token = token;
+
+            using (var client = new HttpClient())
+            {
+                var service = $"http://localhost:7071/api/MobileSettings/";
                 byte[] byteData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(request));
                 using (var content = new ByteArrayContent(byteData))
                 {
