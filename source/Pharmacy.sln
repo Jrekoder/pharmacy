@@ -8,14 +8,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Droid", "Droid\Pha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Domain", "Pharmacy.Domain\Pharmacy.Domain.csproj", "{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Functions", "Pharmacy.Functions\Pharmacy.Functions.csproj", "{773A963B-7007-425B-9B37-634134BC6D09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Functions", "Pharmacy.Functions\Pharmacy.Functions.csproj", "{773A963B-7007-425B-9B37-634134BC6D09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Functions.Console", "Pharmacy.Functions.Console\Pharmacy.Functions.Console.csproj", "{8C0120F6-3C92-469C-B436-D1AA31075BCB}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Pharmacy.Domain\Pharmacy.Domain.projitems*{6ba93474-54f9-4640-b84c-6078d6d478d0}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|iPhone = Debug|iPhone

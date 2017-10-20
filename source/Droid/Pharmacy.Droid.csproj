@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Pharmacy.Droid</RootNamespace>
     <AssemblyName>Pharmacy.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
