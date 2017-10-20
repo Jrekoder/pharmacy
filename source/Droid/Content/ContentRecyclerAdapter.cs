@@ -12,21 +12,7 @@ namespace Pharmacy.Droid
 
         protected override ContentViewHolder CreateViewHolder(LayoutInflater inflater, ViewGroup parent)
         {
-            //var rootView = inflater.Inflate (Resource.Layout.PartnerCardView, parent, false);
-
             return new ContentViewHolder(new View(parent.Context));
         }
-
-        //#region FastScrollRecyclerView.ISectionedAdapter Members
-
-        //public string GetSectionName (int position)
-        //{
-        //  //return the first letter of the partner's name
-        //  var partner = CurrentItems [position];
-
-        //  return partner.Name.Substring (0, 1).ToUpper ();
-        //}
-
-        //#endregion
     }
 }

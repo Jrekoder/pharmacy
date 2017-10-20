@@ -24,7 +24,7 @@ namespace Pharmacy.Droid
             webView.Settings.DomStorageEnabled = true;
             webView.Settings.UseWideViewPort = true;
             webView.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
-            webView.LoadUrl(Constants.WebChatURL);
+            webView.LoadUrl(Settings.WebChatUrl);
 
             return rootView;
         }

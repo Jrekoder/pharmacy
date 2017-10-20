@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
@@ -10,6 +11,7 @@ using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
 using Microsoft.WindowsAzure.MobileServices;
+using Pharmacy.Droid.Services;
 
 namespace Pharmacy.Droid
 {
@@ -34,16 +36,26 @@ namespace Pharmacy.Droid
             Window.RequestFeature(WindowFeatures.NoTitle);
 
             // Init Mobile Center Analytics and Crashes
-            MobileCenter.Start(Constants.MobileCenterAppID, typeof(Analytics), typeof(Crashes));
+            MobileCenter.Start(Settings.MobileCenterID_Android, typeof(Analytics), typeof(Crashes));
 
             // Create the client instance, using the mobile app backend URL.
-            client = new MobileServiceClient(Constants.ApplicationURL);
+            client = new MobileServiceClient(Settings.ApplicationUrl);
 
             // Create your application here
             SetContentView(Resource.Layout.activity_login);
 
             LoadViews();
             InitTransition();
+
+            Task.Run(async()=>{
+                Dictionary<string, string> result = await RestService.GetMobileSettings();
+                Settings.MobileCenterID_Android = result[nameof(Settings.MobileCenterID_Android)];
+                Settings.NotificationAccessSignature = result[nameof(Settings.NotificationAccessSignature)];
+                Settings.NotificationHubName = result[nameof(Settings.NotificationHubName)];
+                Settings.WebChatUrl = result[nameof(Settings.WebChatUrl)];
+                Settings.FirebaseAppSenderId = result[nameof(Settings.FirebaseAppSenderId)];
+            });
+
         }
 
         protected override void OnResume()
