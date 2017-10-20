@@ -87,7 +87,7 @@ namespace Pharmacy.Functions.Console
                         break;
                 }
             }
-            while (option != "5");
+            while (option != "6");
         }
 
         private static async Task<string> RegisterRandomProduct()
