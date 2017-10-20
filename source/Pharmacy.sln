@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Droid.UITests", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Droid", "Droid\Pharmacy.Droid.csproj", "{6BA93474-54F9-4640-B84C-6078D6D478D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Functions", "Pharmacy.Functions\Pharmacy.Functions.csproj", "{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Domain", "Pharmacy.Domain\Pharmacy.Domain.csproj", "{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Functions", "Pharmacy.Functions\Pharmacy.Functions.csproj", "{773A963B-7007-425B-9B37-634134BC6D09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Functions.Console", "Pharmacy.Functions.Console\Pharmacy.Functions.Console.csproj", "{8C0120F6-3C92-469C-B436-D1AA31075BCB}"
 EndProject
@@ -49,18 +49,6 @@ Global
 		{6BA93474-54F9-4640-B84C-6078D6D478D0}.Release|iPhone.Build.0 = Release|Any CPU
 		{6BA93474-54F9-4640-B84C-6078D6D478D0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{6BA93474-54F9-4640-B84C-6078D6D478D0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Release|iPhone.Build.0 = Release|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{987ADDBB-A1E9-4434-8A1B-4C09EC81DF6C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -73,6 +61,18 @@ Global
 		{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}.Release|iPhone.Build.0 = Release|Any CPU
 		{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{2D1525D0-9E7C-44AE-BE66-982AEB269AD6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Release|iPhone.Build.0 = Release|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{773A963B-7007-425B-9B37-634134BC6D09}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{8C0120F6-3C92-469C-B436-D1AA31075BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C0120F6-3C92-469C-B436-D1AA31075BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C0120F6-3C92-469C-B436-D1AA31075BCB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
